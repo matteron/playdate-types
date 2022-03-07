@@ -1,0 +1,24 @@
+{
+	"name": "playdate-types",
+	"version": "1.0.0",
+	"description": "",
+	"files": [
+		"**/*.d.ts"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"playdate",
+		"sdk",
+		"lua",
+		"typescript",
+		"tstl"
+	],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"lua-types": "^2.11.0",
+		"typescript-to-lua": "^1.3.4"
+	}
+}
