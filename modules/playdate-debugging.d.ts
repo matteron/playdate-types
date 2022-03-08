@@ -29,7 +29,7 @@ export declare function printTable(this: void, table: LuaTable): void;
 export declare function where(this: void): string;
 
 /** @noSelf */
-export interface PlaydateCoreDebugging {
+export declare interface PlaydateCoreDebugging {
 	// 6.14 Debugging
 	/**
 	 * If the simulator is launched from the command line, any extra arguments passed there are available in the {@link playdate.argv} array.
@@ -39,12 +39,12 @@ export interface PlaydateCoreDebugging {
 	 * flag determines whether or not the print() function adds a newline to the end of the printed text.
 	 * Default is true.
 	 */
-	setNewLinePrinted: (flag: boolean) => void;
+	setNewLinePrinted(flag: boolean): void;
 	/**
 	 * Calculates the current frames per second and draws that value at x, y.
 	 * 
 	 * @remarks
 	 * Make sure to invoke drawFPS() only once per frame, otherwise its displayed results will be incorrect. 
 	 */
-	drawFPS: (x: number, y: number) => void;
+	drawFPS(x: number, y: number): void;
 }

@@ -2,6 +2,9 @@
 import { PlaydateCoreAccessibility } from './modules/playdate-accessibility';
 import { PlaydateCoreDebugging, print as printDebug, printTable as printTableDebug, where as whereDebug } from './modules/playdate-debugging';
 import { PlaydateCoreDisplay } from './modules/playdate-display';
+import { PlaydateCoreEasingFunctions } from './modules/playdate-easing';
+import { PlaydateCoreFiles } from './modules/playdate-files';
+import { PlaydateCoreGeometry } from './modules/playdate-geometry';
 import { PlaydateCoreInput} from './modules/playdate-input';
 import { PlaydateCoreLifecycles } from './modules/playdate-lifecycle';
 import { PlaydateCoreMenus } from './modules/playdate-menu';
@@ -20,6 +23,9 @@ export type Playdate = PlaydateCoreSystem
 	& PlaydateCoreDebugging
 	& PlaydateCoreProfiling
 	& PlaydateCoreDisplay
+	& PlaydateCoreEasingFunctions
+	& PlaydateCoreFiles
+	& PlaydateCoreGeometry
 ;
 
 declare global {

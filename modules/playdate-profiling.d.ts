@@ -14,22 +14,22 @@
  */
 export declare function sample(name: string, func: Function): void;
 
-type PlaydateStats = {
+declare type PlaydateStats = {
 	kernel: number;
 	game: number;
 	audio: number;
 }
 
 /** @noSelf */
-export interface PlaydateCoreProfiling {
+export declare interface PlaydateCoreProfiling {
 	/**
 	 * Returns a table containing percentages for each system task, such as:
 	 */
-	getStats: () => PlaydateStats;
+	getStats(): PlaydateStats;
 
 	/**
 	 * `setStatsInterval()` sets the length of time for each sample frame of runtime stats.
 	 * Set seconds to zero to disable stats collection.
 	 */
-	setStatsInterval: (seconds: number) => void;	
+	setStatsInterval(seconds: number): void;	
 }

@@ -1,17 +1,17 @@
-export type PlaydateMenuItem = {
+export declare type PlaydateMenuItem = {
 	/**
 	 * Sets the callback function for this menu item.
 	 */
-	setCallback: (callback: (this: void) => void) => void;
+	setCallback(callback: (this: void) => void): void;
 	/**
 	 * Sets the title displayed for this menu item.
 	 * The title for a menu item can also be set using dot syntax.
 	 */
-	setTitle: (newTitle: string) => void;
+	setTitle(newTitle: string): void;
 	/**
 	 * Returns the title displayed for this menu item.
 	 */
-	getTitle: () => string;
+	getTitle(): string;
 	/**
 	 * Sets the value for this menu item. The value is of a different type depending on the type of menu item:
 	 * 
@@ -23,15 +23,15 @@ export type PlaydateMenuItem = {
 	 * 
 	 * The value for a menu item can also be set using dot syntax.
 	 */
-	setValue: (newValue: number | boolean | string) => void;
+	setValue(newValue: number | boolean | string): void;
 	/**
 	 * Returns the value for this menu item.
 	 */
-	getValue: () => number | boolean | string;
+	getValue(): number | boolean | string;
 }
-type PlaydateAddMenuResult = LuaMultiReturn<[PlaydateMenuItem, string]>;
+declare type PlaydateAddMenuResult = LuaMultiReturn<[PlaydateMenuItem, string]>;
 
-export type PlaydateMenu = {
+export declare type PlaydateMenu = {
 	/**
 	 * @param title - will be the title displayed by the menu item.
 	 * When this menu item is selected, the OS will:
@@ -42,7 +42,7 @@ export type PlaydateMenu = {
 	 * 
 	 * @returns If the returned menuItem is nil, a second errorMessage return value will indicate the reason the operation failed.
 	 */
-	addMenuItem: (title: string, callback: (this: void) => void) => PlaydateAddMenuResult;
+	addMenuItem(title: string, callback: (this: void) => void): PlaydateAddMenuResult;
 	/**
 	 * Creates a new menu item that can be checked or unchecked by the player.
 	 * 
@@ -56,7 +56,7 @@ export type PlaydateMenu = {
 	 * 
 	 * @returns If the returned menuItem is nil, a second errorMessage return value will indicate the reason the operation failed.
 	 */
-	addCheckmarkMenuItem: (title: string, initialValue?: boolean, callback?: (this: void, checked: boolean) => void) => PlaydateAddMenuResult;
+	addCheckmarkMenuItem(title: string, initialValue?: boolean, callback?: (this: void, checked: boolean) => void): PlaydateAddMenuResult;
 	/**
 	 * Creates a menu item that allows the player to cycle through a set of options.
 	 * @param title - will be the title displayed by the menu item.
@@ -69,24 +69,24 @@ export type PlaydateMenu = {
 	 * 
 	 * @returns If the returned menuItem is nil, a second errorMessage return value will indicate the reason the operation failed.
 	 */
-	addOptionsMenuItem: (title: string, options: string[], initialValue?: string, callback?: (this: void, option: string) => void) => PlaydateAddMenuResult;
+	addOptionsMenuItem(title: string, options: string[], initialValue?: string, callback?: (this: void, option: string) => void): PlaydateAddMenuResult;
 	/**
 	 * Removes the playdate.menuItem from the menu.
 	 */
-	removeMenuItem: (menuItem: PlaydateMenuItem) => void;
+	removeMenuItem(menuItem: PlaydateMenuItem): void;
 	/**
 	 * Removes all menu items from the menu.
 	 */
-	removeAllMenuItems: () => void;
+	removeAllMenuItems(): void;
 }
 
 /** @noSelf */
-export interface PlaydateCoreMenus {
+export declare interface PlaydateCoreMenus {
 	// 6.5 Interacting with the System Menu
 	/**
 	 * Returns a playdate.menu object. Use this to add your custom menu items.
 	 */
-	getSystemMenu: () => PlaydateMenu;
+	getSystemMenu(): PlaydateMenu;
 	menu: PlaydateMenu;
 	menuItem: PlaydateMenuItem;
 	// TODO: image type
@@ -101,5 +101,5 @@ export interface PlaydateCoreMenus {
 	 * 
 	 * To remove a previously-set menu image, pass nil for the image argument.
 	 */
-	setMenuImage: (image: any, xOffset?: number) => void;
+	setMenuImage(image: any, xOffset?: number): void;
 }

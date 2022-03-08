@@ -1,0 +1,11 @@
+{
+	// These compiler settings basically say "use bleeding edge, and strict TypeScript"
+	"compilerOptions": {
+		"target": "esnext",
+		"lib": ["esnext"],
+		"module": "esnext",
+		"strict": true,
+		"types": ["lua-types/5.4"],
+		"moduleResolution": "node"
+	}
+}
